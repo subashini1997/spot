@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spotify is a digital music service that gives you access to millions of songs.">
+    <meta name="keywords" content="Spotify, Spotify Web, Digital Music, Video Player" />
+    <meta name="author" content="Laura Bigoni">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css'
+        integrity='sha512-4wfcoXlib1Aq0mUtsLLM74SZtmB73VHTafZAvxIp/Wk9u1PpIsrfmTvK0+yKetghCL8SHlZbMyEcV8Z21v42UQ=='
+        crossorigin='anonymous' />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Spotify Web</title>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <!-- sidebar navigation -->
+            <nav id="sidebar-menu">
+                <!-- Spotify logo -->
+                <div class="spotify-logo">
+                    <img class="logo" src="img/logo.svg" alt="spotify logo">
+                    <img class="logo-small" src="img/logo-small.svg" alt="Spotify logo small">
+                </div>
+                <!-- Menu navigation icon and links -->
+                <div class="navigation">
+                    <ul>
+                        <li class="active"><a href="#"><img src="img/home.svg" alt="home"> <span>Home</span></a></li>
+                        <li><a href="#"><img class="greyscale" src="img/search.svg" alt="search"> <span
+                                    class="text-grey">Cerca</span></a>
+                        </li>
+                        <li><a href="#"><img class="greyscale" src="img/libreria.svg" alt="library"> <span
+                                    class="text-grey">La tua
+                                    libreria</span></a></li>
+                    </ul>
+                </div>
+                <!-- Playlist section / create new and already created list-->
+                <div class="add-playlist">
+                    <ul>
+                        <li class="title">playlist</li>
+                        <li><a href="#"><i class="fas fa-plus"></i><span class="text-grey"> crea playlist</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="playlist">
+                    <ul class="scroll-playlist">
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                        <li><a class="text-grey" href="#">nome playlist</a></li>
+                    </ul>
+                </div>
+                <!-- install app and user administration -->
+                <div class="administration">
+                    <ul>
+                        <li><a href="#"><img class="download greyscale" src="img/download.svg" alt="download"><span
+                                    class="text-grey">Installa app</span></a></li>
+                        <div class="border-top text-grey"></div>
+                        <li><a href="#"><img class="user" src="img/profile.svg" alt="user profile"> <span>Laura
+                                    Bigoni</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Main content of the page -->
+            <div id="main-content">
+                <!-- Header -->
+                <header>
+                    <!-- this scroll with page -->
+                    <div id="top-menu">
+                        <!-- Upgrade button -->
+                        <a href="#">effettua l'upgrade</a>
+                    </div>
+                </header>
+                <!-- main content header -->
+                <nav id="content-menu">
+                    <!-- Highlighted / Podcast / Charts / Discover -->
+                    <ul>
+                        <li class=""><a class="active text-grey" href="#">in evidenza</a>
+                            <div></div>
+                        </li>
+                        <li><a class="text-grey" href="#">podcast</a></li>
+                        <li><a class="text-grey" href="#">classifiche</a></li>
+                        <li><a class="text-grey" href="#">generi e mood</a></li>
+                        <li><a class="text-grey" href="#">nuove uscite</a></li>
+                        <li><a class="text-grey" href="#">scopri</a></li>
+                    </ul>
+                </nav>
+                <!-- Recently played -->
+                <div class="recently-played">
+                    <h2>Recently played</h2>
+                    <section class="d-flex-self">
+                        <div class="album">
+                            <div class="card"><img src="img/metal_lifting.jpg" alt="metal lifting"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Heavy Metal</h3>
+                                <span>Subtitle</span>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/stranger.jpeg" alt="Stranger Things"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Stranger Things Vol. <br> 1 (a Netflix Original <br> series Soundtrack)</h3>
+                                <span>Kyle Dixon & Michael Stein</span>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/aquietplace.jpeg" alt="a quiet place"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>A quiet place</h3>
+                                <span>Subtitle</span>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/split.jpeg" alt="Split"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Split</h3>
+                                <span>Subtitle</span>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/cure.jpeg" alt="a cure for wellness"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>A cure for wellness</h3>
+                                <span>Subtitle</span>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/sinister.jpeg" alt="sinister"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Sinister</h3>
+                                <span>Subtitle</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Created for you -->
+                <div class="for-you">
+                    <h2>Created for Laura Bigoni</h2>
+                    <h4 class="text-grey">Più ascolti più accurati saranno i suggerimenti.</h4>
+                    <section class="d-flex">
+                        <div class="album">
+                            <div class="card"><img src="img/radar.jpeg" alt="release radar"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Release Radar</h3>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/mixdaily.jpeg" alt="Daily Mix"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Daily Mix 1</h3>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Popoular artists -->
+                <div class="artists">
+                    <h2>Artisti più popolari</h2>
+                    <h4 class="text-grey">Più ascolti più accurati saranno i suggerimenti.</h4>
+                    <section class="d-flex">
+                        <div class="album">
+                            <div class="card"><img src="img/youg.jpeg" alt="Lana Del Rey"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Lana Del Rey</h3>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="card"><img src="img/einaudi.jpeg" alt="Ludovico Einaudi"><i class="far fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h3>Ludovico Einaudi</h3>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Spotify music controls -->
+        <div id="controls">
+            <!-- Preview album / artist name / heart,folder icons -->
+            <div class="now-playing">
+                <img src="img/sinister.jpeg" alt="sinister track">
+                <span class="artist-name">Sinister<br><span class="text-grey track-info">Brano<br> Nome</span></span>
+            </div>
+            <div class="like-folder">
+                <i class="text-grey far fa-heart"></i>
+                <i class="text-grey far fa-folder"></i>
+            </div>
+            <!-- Player controls -->
+            <div class="track-controls">
+                <div class="music-controls">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="far fa-play-circle"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="progress-controls">
+                    <span>0:25</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar overlay">
+                            <div class="pointer"></div>
+                        </div>
+                    </div>
+                    <span>4:32</span>
+                </div>
+            </div>
+            <!-- Queued tracks / devices / volume -->
+            <div class="devices">
+                <div class="menage-devices">
+                    <i class="fas fa-list"></i>
+                    <i class="fas fa-desktop"></i>
+                    <i class="fas fa-volume-up"></i>
+                    <div class="volume-bar">
+                        <div class="volume-bar overlay">
+                            <div class="pointer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

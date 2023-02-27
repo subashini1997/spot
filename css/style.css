@@ -1,0 +1,531 @@
+/**Generics**/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+main {
+    background-color: rgb(20,25,34);
+}
+
+img {
+    max-width: 100%;
+}
+
+/**Utilities**/
+.text-grey {
+    color: rgb(106,109,114);
+}
+
+.greyscale {
+    filter: invert(50%);
+}
+
+.wrapper {
+    display: flex;
+}
+
+/**Effetti HOVER**/
+.text-grey:hover {
+    color: white;
+    transition: .2s ease-in;
+}
+
+.border-top.text-grey:hover,
+h4.text-grey:hover {
+    color: rgb(102,102,102);
+}
+
+.add-playlist a:hover .fa-plus {
+    cursor: pointer;
+    background-color: white;
+    transition: .2s ease-in;
+}
+
+#sidebar-menu a:hover span {
+    color: white;
+    transition: .2s ease-in;
+}
+
+#sidebar-menu .navigation ul a:hover img,
+#sidebar-menu .administration ul a:hover img {
+    filter: invert(0);
+    transition: .2s ease-in;
+}
+
+.track-info:hover {
+    text-decoration: underline;
+    color: rgb(106,109,114);
+}
+
+#controls .progress-controls .progress-bar.overlay:hover,
+#controls .devices .volume-bar.overlay:hover {
+    background-color: rgb(173,255,47);
+    transition: 0s;
+}
+
+.pointer {
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    position: relative;
+    bottom: 3px;
+    left: 90%;
+    border-radius: 50%;
+    display: none;
+}
+
+#controls .progress-controls .progress-bar.overlay:hover .pointer,
+#controls .devices .volume-bar.overlay:hover .pointer {
+    display: block;
+}
+
+#controls .music-controls i.fa-play-circle:hover {
+    transform: scale(1.2);
+}
+
+#top-menu a:hover {
+    transform: scale(1.1);
+}
+
+/**sidebar menu**/
+#sidebar-menu span, #sidebar-menu hr, 
+.logo, .add-playlist, 
+.playlist, .administration span {
+    display: none;
+}
+
+#sidebar-menu {
+    flex-basis:50px;
+    flex-shrink: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:width .05s linear;
+    transform:translateX(0) scale(1,1);
+}
+
+#sidebar-menu .navigation {
+    flex-grow: 1;
+}
+
+#sidebar-menu img.download {
+    width: 50%;
+    margin-left: 10px;
+}
+
+#sidebar-menu .spotify-logo, #sidebar-menu .navigation, #sidebar-menu .playlist {
+    margin: 10px;
+}
+
+#sidebar-menu .administration img.user {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    background-color: rgb(102,102,102);
+}
+
+/**Header main**/
+#top-menu a {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+#top-menu {
+    height: 80px;
+    width: calc(100% - 50px);
+    background-color: rgba(8,11,18, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/**Main content**/
+#main-content {
+    flex-grow:1;
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+#content-menu {
+    padding-top: 90px;
+}
+
+#content-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recently-played ul, .for-you ul, .artists ul {
+    padding-bottom: 10px;
+}
+
+#content-menu a {
+    text-decoration: none;
+}
+
+#content-menu li {
+    padding-right: 10px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+}
+
+#content-menu a.active::after {
+    content: '';
+    display: block;
+    background-color: rgb(173,255,47);
+    width: 30%;
+    height: 2px;
+    margin: 3px auto;
+}
+
+/**Overlay cards**/
+#main-content .fa-play-circle {
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    opacity: 0;
+}
+
+#main-content .card:hover .fa-play-circle {
+    opacity: 1;
+    transition: .5s ease-in-out;
+}
+
+.card img {
+    filter: opacity(1);
+}
+
+.card:hover img {
+    filter: opacity(0.5);
+}
+
+/**Main sections**/
+.card {
+    position: relative;
+}
+
+.album {
+    padding-bottom: 10px;
+}
+
+.d-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.recently-played .d-flex-self  {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 14px;
+}
+
+#main-content div {
+    margin-left: 10px;
+}
+
+#main-content h2, h4 {
+    margin: 30px 20px;
+    text-align: left;
+}
+
+#main-content span, #main-content h2 {
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.recently-played img, .for-you  img, .artists img {
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.artists img {
+    border-radius: 50%;
+}
+
+/**Footer**/
+/**Controls**/
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(40,40,40);
+}
+
+#controls img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+#controls .like-folder i {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: .2s ease-in;
+}
+
+#controls i {
+    padding: 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#controls .music-controls i.fa-play-circle {
+    font-size: 28px;
+    margin-bottom: 10px;
+    transition: .2s;
+}
+
+#controls .music-controls i {
+    padding: 0 10px;
+}
+
+#controls .progress-bar {
+    height: 4px;
+    background-color: rgb(102,102,102);
+    width: 150px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+#controls .progress-bar.overlay {
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+    width: 20%;
+    margin:0;
+}
+
+#controls .volume-bar {
+    height: 4px;
+    background-color: rgb(102,102,102);
+    width: 80px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#controls .volume-bar.overlay {
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+    width: 20%;
+}
+
+.now-playing span.artist-name {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.now-playing img, .now-playing span {
+    cursor: pointer;
+}
+
+.now-playing span.track-info {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.now-playing, .menage-devices, .progress-controls {
+    display: flex;
+    align-items: center;
+}
+
+.now-playing, .menage-devices, .progress-controls, .like-folder {
+    flex-grow: 1;
+}
+
+.progress-controls span {
+    font-size: 10px;
+}
+
+.track-controls {
+    flex-grow: 30;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+/* --- SMALL DEVICES --- */
+@media screen and (min-width: 576px) {
+    /* *Sidebar* */
+    #sidebar-menu .spotify-logo, #sidebar-menu .navigation, #sidebar-menu .playlist {
+        margin: 10px 0 0 0;
+    }
+    #sidebar-menu {
+        flex-basis: 230px;
+        transform:translateX(0) scale(1,1);
+        transition:all .1s linear;
+    }
+    #sidebar-menu span, #sidebar-menu hr, 
+    .add-playlist, .playlist, 
+    .administration span {
+    display: inline-block;
+    }
+    #sidebar-menu ul li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    }
+    .playlist {
+        flex-grow: 6;
+    }
+    .add-playlist .fa-plus {
+        font-size: 30px;
+        padding: 6px 8px;
+        color: black;
+        margin-right: 10px;
+        background-color: rgb(210,210,210);
+    }
+    .add-playlist .title {
+        padding: 20px 0 10px 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    #sidebar-menu .navigation ul img {
+        width: 35px;
+        padding-right: 5px;
+    }
+    #sidebar-menu .administration img.user {
+        margin: 0 10px 0 0;
+    }
+    #sidebar-menu img.download {
+        width: 20px;
+        margin-right: 10px;
+        margin-left: 0;
+    }
+    li.active {
+        padding-left: 16px;
+    }
+    /* *Logo* */
+    .logo {
+        display: inline;
+        width: 80%;
+        padding-bottom: 10px;
+    }
+    .logo-small {
+        display: none;
+    }
+    li, .logo {
+    padding-left: 20px;
+    }
+    /* *Main* */
+    #top-menu {
+        width: calc(100% - 230px);
+    }
+    .navigation ul {
+        list-style-type: none;
+    }
+    .navigation li.active {
+        margin: 0;
+        border-left: 4px solid rgb(173,255,47);
+    }
+    div.playlist .scroll-playlist {
+        text-transform: capitalize;
+        line-height: 30px;
+        height: calc(100vh - 450px);
+        list-style: none;
+        overflow-y: auto;
+    }
+    .border-top {
+        border-top: 1px solid;
+        width: 80%;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    .recently-played .card img, .for-you .card img, .artists .card img {
+    max-width:150px;
+    }
+    .for-you .d-flex, .artists .d-flex {
+        justify-content: flex-start;
+    }
+    /* *Footer* */
+    #controls .music-controls i {
+        padding: 0 15px;
+    }
+    #controls .now-playing br {
+        display: none;
+    }
+    #controls .now-playing span {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* ---fine media query--- */
+
+/* ---MEDIUM DEVICES--- */
+@media screen and (min-width: 768px) {
+    #controls .progress-bar {
+        width: 300px;
+        transition: .2s ease-in;
+    }
+    #controls .like-folder {
+        display: flex;
+        transition: .2s ease-in;
+    }
+    #controls .like-folder i {
+        padding-left: 20px;
+    }
+}
+/* ---fine media query--- */
+
+/* ---LARGE DEVICES--- */
+@media screen and (min-width: 992px) {
+    .recently-played .card img, .for-you .card img, .artists .card img {
+        max-width: 200px;
+    }
+    #controls .progress-bar {
+        width: 450px;
+        transition: .2s ease-in;
+    }
+}
+/* ---fine media query--- */
